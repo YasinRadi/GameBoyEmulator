@@ -1,7 +1,7 @@
-"""Main."""
+"""Emulator main script."""
 
-from config import OPCODES
-from utils import parse_opcodes
+from src.config import OPCODES
+from src.utils import parse_opcodes
 
 
 if __name__ == "__main__":
