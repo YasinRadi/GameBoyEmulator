@@ -1,7 +1,6 @@
 """Configuration variables."""
 
-import json
+import requests
 
 
-with open("opcodes.json", "r") as f:
-    OPCODES = json.load(f)
+OPCODES = requests.get("https://gbdev.io/gb-opcodes/Opcodes.json").json()
