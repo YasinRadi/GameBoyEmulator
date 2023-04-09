@@ -9,3 +9,6 @@
 
 # egg builds
 *.egg-info/
+
+# roms
+roms/
