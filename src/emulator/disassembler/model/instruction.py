@@ -22,3 +22,10 @@ class Instruction:
                            cycles=self.cycles,
                            bytes=self.bytes,
                            mnemonic=self.mnemonic)
+
+    def print(self):
+        ops = ", ".join(op.print() for op in self.operands)
+        s = f"{self.mnemonic:<8} {ops}"
+        if self.comment:
+            s += f" ; {self.comment:<10}"
+        return s
