@@ -4,7 +4,7 @@
 import sys
 from dataclasses import dataclass
 
-from config import PREFIXED, INSTRUCTIONS
+from .config import PREFIXED, INSTRUCTIONS
 
 
 @dataclass
@@ -55,10 +55,10 @@ class Decoder:
             if operand.bytes is not None:
                 value = self.read(address, operand.bytes)
                 address += operand.bytes
-                new_operands.append(operand.copy(value))
+                new_operands.append(operand.create(value))
             else:
                 # No bytes; that means it's not a memory address
                 new_operands.append(operand)
-        decoded_instruction = instruction.copy(operands=new_operands)
+        decoded_instruction = instruction.create(new_operands)
         return address, decoded_instruction
     

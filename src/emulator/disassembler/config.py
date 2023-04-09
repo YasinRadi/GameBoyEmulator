@@ -2,7 +2,7 @@
 
 import requests
 
-from utils import parse_opcodes
+from .utils import parse_opcodes
 
 
 OPCODES = requests.get("https://gbdev.io/gb-opcodes/Opcodes.json").json()

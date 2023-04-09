@@ -1,7 +1,7 @@
 """Utility functions."""
 
-from model.operand import Operand
-from model.instruction import Instruction
+from .model.operand import Operand
+from .model.instruction import Instruction
 
 
 def parse_opcodes(opcodes: dict) -> dict:    
