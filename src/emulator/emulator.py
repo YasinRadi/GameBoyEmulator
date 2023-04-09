@@ -1,14 +1,13 @@
 """Emulator main script."""
 
-from md_reader.reader import read_cartridge_metadata
+from disassembler.disassembler import Disassembler
 
 
 def main():
     """Emulator main function."""
-
-    with open("roms/snake.gb", "rb") as rom:
-        metadata = read_cartridge_metadata(rom.read())
-        print(metadata)
+    
+    disassembler = Disassembler("roms/snake.gb")
+    disassembler.disassemble(0x150, 16)
 
 if __name__ == "__main__":
     main()
